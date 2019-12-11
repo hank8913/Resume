@@ -1,0 +1,317 @@
+body{
+			background-color:grey;        /*#63808F;*/
+		}
+		.center{
+			position: absolute;
+			width: 80%;
+			height: 1200px;
+			top:20%;
+			background-color: white;
+			left: 10%;
+			transform: translate(-50%;-50%);
+			border:solid;
+		}
+		aside{
+    position: relative;
+     width: 15%;
+     height: 700px;
+     text-align: center;
+     float: left;
+    
+
+
+     }
+
+     section{
+     position:relative;
+     top:150px;
+     left: 70px;
+     width: 70%;
+     height:500px;
+     float: right;
+    
+     }
+
+li {
+    position: relative;
+    list-style: none;
+    margin: 50px 0;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+li:before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: grey;
+    border-radius: 1000px;
+}
+
+li:after {
+    content: "";
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 0;
+    height: 15px;
+    background-color:black;
+    border-radius: 1000px;
+    animation-duration: .7s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+li.html:after {
+    animation-name: html;
+  
+}
+
+@keyframes html {
+    to {
+        width: 70%;
+    }
+}
+
+li.css:after {
+    animation-name: css;
+}
+
+@keyframes css {
+    to {
+        width: 70%;
+    }
+}
+
+li.js:after {
+    animation-name: js;
+}
+
+@keyframes js {
+    to {
+        width: 60%;
+    }
+}
+
+li.ng:after {
+    animation-name: ng;
+}
+
+@keyframes ng {
+    to {
+        width: 60%;
+    }
+}
+.font{
+	font-family:serif;
+}
+.button5 {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family:"微軟正黑體";
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}
+
+
+
+.font1{
+font-family: monospace;
+font-size: 46px;
+font-weight: bold;
+}
+.hr1{
+      margin-left: -300px;
+}
+.accordion {
+  background-color: grey;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 70%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  width: 70%;
+  padding: 0 px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+
+
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';           /*線*/
+  position: absolute;
+  width: 6px;
+  background-color: black;
+  top: 0;
+  bottom: 0;
+  left: 36%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;           /*卡片*/
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';                /*左邊球*/
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 20px;
+  background-color: white;
+  border: 4px solid black;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: -114px ;    /*左邊欄位*/
+}
+
+/* Place the container to the right */
+.right {
+  left: 345px;        /*右邊欄位*/
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+ 
+  border-width: 10px 0 10px 10px;
+  
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;                     /*箭頭*/
+  width: 0;
+  z-index: 1;
+  left: 50px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: 17px;     /*右邊球*/
+}
+
+/* The actual content */
+.content {
+  padding: 5px 5px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  border: solid;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+
+.font2{
+  font-family: "微軟正黑體";
+
+}
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+.place{
+  top:100px;
+}
+.font3{
+  text-align: center;
+  font-family: "微軟正黑體";
+}
